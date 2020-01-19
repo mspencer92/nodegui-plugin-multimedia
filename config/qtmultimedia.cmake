@@ -55,4 +55,4 @@ function(AddQtMultiMediaSupport addonName)
     endif()    
 
   
-endfunction(AddQtWebSupport addonName)
+endfunction(AddQtMultiMediaSupport addonName)
