@@ -12,7 +12,7 @@
   "author": "Atul R",
   "license": "MIT",
   "peerDependencies": {
-    "@nodegui/nodegui": "^0.12.1"
+    "@nodegui/nodegui": "https://github.com/nodegui/nodegui"
   },
   "dependencies": {
     "cmake-js": "^5.3.2",
@@ -20,7 +20,7 @@
     "node-addon-api": "^1.7.1"
   },
   "devDependencies": {
-    "@nodegui/nodegui": "^0.12.1",
+    "@nodegui/nodegui": "https://github.com/nodegui/nodegui",
     "@nodegui/qode": "^1.0.6",
     "@types/node": "^12.12.8",
     "typescript": "^3.7.2"
