@@ -1,20 +1,35 @@
 #pragma once
 
 #include <napi.h>
-#include <nodegui/core/Component/component_macro.h>
 
 #include <QCameraInfo>
 
-class QCameraInfoWrap : public Napi::ObjectWrap<QCameraInfoWrap> {
+#include "Extras/Utils/nutils.h"
+#include "core/Component/component_wrap.h"
+
+class QCameraInfoWrap: public Napi::ObjectWrap<QCameraInfoWrap> {
+  COMPONENT_WRAPPED_METHODS_DECLARATION
  private:
-  QCameraInfo* instance;
+  QCameraInfo *instance;
+  bool disableDeletion;
 
  public:
-  static Napi::FunctionReference constructor;
   static Napi::Object init(Napi::Env env, Napi::Object exports);
-  QCameraInfoWrap(const Napi::CallbackInfo& info);
-  QCameraInfo* getInternalInstance();
-  // Wrapped methods
+  static Napi::Value fromQCameraInfo(Napi::Env env, QCameraInfo *item);
 
-  COMPONENT_WRAPPED_METHODS_DECLARATION
+  QCameraInfoWrap(const Napi::CallbackInfo &info);
+
+  ~QCameraInfoWrap();
+
+  QCameraInfo *getInternalInstance();
+
+  // class constructor
+  static Napi::FunctionReference constructor;
+
+  // wrapped methods
+
 };
+
+  namespace StaticQCameraInfoWrapMethods {
+    Napi::Value availableCameras(const Napi::CallbackInfo &info);
+};  // namespace StaticQCameraInfoWrapMethods 

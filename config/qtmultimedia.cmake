@@ -33,8 +33,8 @@ function(AddQtMultiMediaSupport addonName)
             "${QT_HOME_DIR}\\include\\QtMultimedia"
         )
         target_link_libraries(${addonName} PRIVATE
-            "${QT_HOME_DIR}\\lib\\QtMultimediaWidgets.lib"
-            "${QT_HOME_DIR}\\lib\\QtMultimedia.lib"
+            "${QT_HOME_DIR}\\lib\\Qt5MultimediaWidgets.lib"
+            "${QT_HOME_DIR}\\lib\\Qt5Multimedia.lib"
         )
     endif()
 
